@@ -1,0 +1,130 @@
+/*!
+* Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+* Copyright 2013-2017 Start Bootstrap
+* Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+*/
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.frame-avatar {
+  width: 250px;
+  height: 250px;
+}
+
+.user-modal-lines {
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+
+.user-modal-lines-infos {
+  font-size: 24px;
+  position: absolute;
+  left: 500px;
+  color: #007bff;
+}
+
+#compare-user-btn {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+.search-bar {
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.add-user-button {
+  border-radius: 200%;
+  position: absolute;
+  top: 205px;
+  left: 30px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 30px;
+}
+
+#user-modal-image {
+  width: 300px;
+  height: 300px;
+}
+
+.users-list-title {
+  margin-top: 20px;
+}
+
+.user-list {
+  height: 50px;
+}
+
+.users-list-name {
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.delete-user {
+  top: 50%;
+  right: 16px;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.user-frame-image {
+  cursor: pointer;
+}
+
+#users-comparison-table {
+  list-style-type: none;
+  padding: 0;
+  max-height: 100%;
+}
+
+.table-user-image {
+  width: 100px;
+  height: 100px;
+}
+
+#compare-users-modal-doc {
+  max-width: 95%;
+}
+
+.table-row {
+  vertical-align: middle;
+}
+
+/* for the sortable table (compare-users-modal) */
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol.users-comparison-table li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+
+ol.users-comparison-table li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}

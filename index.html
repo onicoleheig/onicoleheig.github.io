@@ -1,7 +1,176 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Hello World</h1>
-        <p>I'm hosted with GitHub Pages.</p>
-    </body>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>UserCompare - Home</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand title" href="index.html">UserCompare - A Github Analytics</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+</div>
+</div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-lg-3">
+
+      <h3 class="users-list-title">Users list</h3>
+      <button type="button" class="btn btn-outline-primary" id="compare-user-btn" data-toggle="modal">Compare users</button>
+      <br><span id="compare-user-alert"></span>
+      <div class="list-group" id="users-list">
+      </div>
+
+    </div><!-- /.col-lg-3 -->
+
+    <!-- main panel -->
+    <div class="col-lg-9">
+
+      <div class="input-group">
+        <input type="text" class="form-control search-bar" id="search-bar" placeholder="Search user...">
+      </div>
+
+      <!-- User found -->
+      <div>
+        <h2 class="my-4">Users found</h2>
+      </div>
+
+      <!-- User frames -->
+      <div class="row" id="user-frame-row">
+      </div>
+
+    </div><!-- /.col-lg-9 -->
+
+  </div><!-- /.row -->
+
+</div><!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; UserCompare - A Github Analytics</p>
+  </div>
+  <!-- /.container -->
+</footer>
+
+<!-- Modals -->
+<!-- Modal for users comparison -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="compare-users-modal">
+  <div class="modal-dialog modal-lg" id="compare-users-modal-doc" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="compare-user-modal-title">Compare Users<br><small>You can move the table rows/columns</small></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+    <!-- Comparison table -->
+    <table class="table table-bordered pagin-table" id="users-comparison-table">
+
+      <thead id="sorted-head">
+        <tr id="head-row">
+          <th class="table-row" id="first-column">Profile pictures</th>
+        </tr>
+      </thead>
+
+      <tbody id="sorted-tbody">
+        <tr id="images-row">
+          <th class="table-row">Users names</th>
+        </tr>
+        <tr id="repo-row">
+          <th class="table-row">Commits</th>
+        </tr>
+        <tr id="commit-row">
+          <th class="table-row">++</th>
+        </tr>
+        <tr id="commit-row">
+          <th class="table-row">--</th>
+        </tr>
+        <tr id="commit-row">
+          <th class="table-row">Ratio</th>
+        </tr>
+        <tr id="commit-row">
+          <th class="table-row">Followers</th>
+        </tr>
+        <tr id="commit-row">
+          <th class="table-row">Following</th>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- Modal for user informations -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="user-info-modal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="user-info-modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="user-infos-modal-body">
+
+        <!-- User Image -->
+        <div class="text-center mb-4">
+          <img class="rounded-circle" id="user-modal-image">
+        </div>
+
+        <!-- User Informations -->
+        <div>
+          <h5 class="user-modal-lines">Number of commit:<small class="user-modal-lines-infos" id="user-infos-commit"></small></h5>
+          <h5 class="user-modal-lines">Number of added lines of code (++):<small class="user-modal-lines-infos" id="user-infos-add"></small></h5>
+          <h5 class="user-modal-lines">Number of subtracted lines of code (--):<small class="user-modal-lines-infos" id="user-infos-del"></small></h5>
+          <h5 class="user-modal-lines">Ratio between ++ and --:<small class="user-modal-lines-infos" id="user-infos-ratio"></small></h5>
+          <h5 class="user-modal-lines">Number of followers:<small class="user-modal-lines-infos" id="user-infos-followers"></small></h5>
+          <h5 class="user-modal-lines">Number of following:<small class="user-modal-lines-infos" id="user-infos-following"></small></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/user.js"></script>
+<script src="js/app.js"></script>
+<script src="js/jquery-sortable-min.js"></script>
+
+</script>
+
+</body>
+
 </html>
