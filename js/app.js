@@ -1,6 +1,6 @@
 $(function () {
 
-  baseUrl = 'http://localhost:3000';
+  baseUrl = 'https://arcane-lake-91251.herokuapp.com';
   ADD_USER_BUTTON = "images/add_user.png";
 
   function getUser(username) {
