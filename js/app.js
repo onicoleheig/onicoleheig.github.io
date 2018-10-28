@@ -1,6 +1,6 @@
 $(function () {
 
-  const baseUrl = 'http://localhost:3000';
+  const baseUrl = 'https://arcane-lake-91251.herokuapp.com';
 
   function getUser(username) {
     return fetch(`${baseUrl}/users/${username}`)
