@@ -1,0 +1,1 @@
+{"version":3,"file":"static/iframe.d032dedf93555b800abd.bundle.js","sources":["webpack:///./src/components/IssueCommentNumber.js"],"sourcesContent":["import React from 'react';\n\nfunction CommentsForm(props) {\n  return props.nbComments !== \"0\" ? <span>{props.nbComments}</span> : <span></span>;\n}\n\nexport default CommentsForm;\n\n\n"],"mappings":"AAAA","sourceRoot":""}
